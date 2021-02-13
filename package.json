@@ -1,22 +1,25 @@
 {
   "name": "keener-back",
   "version": "1.0.0",
-  "description": "",
+  "description": "Api de criada para teste de dev na keener",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "migration:create": "knex migrate:make",
+    "migration:up": "knex migrate:latest",
+    "migration:up:prod": "knex migrate:latest --env production",
+    "migration:down": "knex migrate:down"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/LuizF1408/keener-back.git"
-  },
-  "author": "",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/LuizF1408/keener-back/issues"
-  },
-  "homepage": "https://github.com/LuizF1408/keener-back#readme",
+  "author": "Luiz Fernando",
+  "license": "MIT",
   "dependencies": {
-    "express": "^4.17.1"
+    "body-parser": "^1.19.0",
+    "cors": "^2.8.5",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "knex": "^0.21.17",
+    "morgan": "^1.10.0",
+    "pg": "^8.5.1",
+    "uuid": "^8.3.2"
   }
 }
