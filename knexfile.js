@@ -7,7 +7,7 @@ if (!process.env.NODE_ENV) {
   
   module.exports = {
     development: {
-      client: "postgresql",
+      client: "mysql",
       connection: process.env.DATABASE_URL,
       pool: {
         min: 2,
@@ -19,8 +19,8 @@ if (!process.env.NODE_ENV) {
     },
   
     production: {
-      client: "postgresql",
-      connection: process.env.DATABASE_URL+"?sslmode=require",
+      client: "mysql",
+      connection: process.env.DATABASE_URL,
       ssl:true,
       pool: {
         min: 2,
