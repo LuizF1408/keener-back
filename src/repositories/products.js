@@ -1,5 +1,5 @@
 const knex = require("../../db");
-const User = require("../models/Products");
+const Products = require("../models/Products");
 const tableName = "users";
 
 
@@ -7,12 +7,12 @@ const tableName = "users";
 SELECT * FROM meals
 */
 const getAll = async () => {
-    const users = await knex(tableName);
-    return users.map((user) => new User(user));
+    const products = await knex(tableName);
+    return products.map((product) => new Products(product));
 };
 
-const create = async (user) => {
-    const [created] = await knex(tableName).insert(user).returning("*");
+const create = async (product) => {
+    const [created] = await knex(tableName).insert(product).returning("*");
     return new User(created);
 };
 
