@@ -7,6 +7,6 @@ const routeName = "/products";
 
 router.get(routeName, controller.getAll);
 router.post(routeName, controller.create);
-router.delete(`${routeName}/:id`, controller.del);
+router.delete(`${routeName}/:cod`, controller.del);
 
 module.exports = router;

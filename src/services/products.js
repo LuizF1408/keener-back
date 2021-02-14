@@ -13,12 +13,12 @@ const create = async (productsData) => {
     return repository.create(user);
   };
 
-  const del = async (id) => {
-    const user = await repository.getById(id);
-    if (!user.id) {
+  const del = async (cod) => {
+    const user = await repository.getById(cod);
+    if (!user.cod) {
       throw { status: 404, message: "Not Found" };
     }
-    return repository.del(id);
+    return repository.del(cod);
   };
   
   module.exports = {
