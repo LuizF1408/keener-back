@@ -20,7 +20,7 @@ if (!process.env.NODE_ENV) {
   
     production: {
       client: "postgresql",
-      connection: process.env.DATABASE_URL,
+      connection: process.env.DATABASE_URL+"?ssl=true",
       ssl:true,
       pool: {
         min: 2,
