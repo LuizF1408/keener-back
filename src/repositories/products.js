@@ -16,7 +16,7 @@ const create = async (user) => {
     return new User(created);
 };
 
-const del = (id) => knex(tableName).where({ id }).del();
+const del = (cod) => knex(tableName).where({ cod }).del();
 
 
 module.exports = {

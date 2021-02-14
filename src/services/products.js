@@ -22,6 +22,7 @@ const create = async (productsData) => {
   };
   
   module.exports = {
+    create,
     getAll,
     del,
   };

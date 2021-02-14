@@ -18,7 +18,7 @@ const getAll = async (req, res) => {
       if (!value || !name || !type || !cod) {
         throw { status: 400, message: "Invalid Data" };
       }
-      const created = await service.create(req.user.id, req.body);
+      const created = await service.create(req.body);
       res.status(201).json(created);
     } catch (error) {
       handleError(res, error);

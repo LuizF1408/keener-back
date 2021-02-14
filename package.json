@@ -4,6 +4,7 @@
   "description": "Api de criada para teste de dev na keener",
   "main": "index.js",
   "scripts": {
+    "start": "nodemon -r dotenv/config server",
     "test": "echo \"Error: no test specified\" && exit 1",
     "migration:create": "knex migrate:make",
     "migration:up": "knex migrate:latest",
@@ -20,6 +21,10 @@
     "knex": "^0.21.17",
     "morgan": "^1.10.0",
     "pg": "^8.5.1",
+    "sqlite3": "^5.0.1",
     "uuid": "^8.3.2"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.7"
   }
 }
