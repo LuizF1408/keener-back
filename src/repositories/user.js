@@ -8,12 +8,16 @@ const tableName = "users";
 SELECT * FROM users WHERE id=?
 */
 const getOne = async (filter) => {
-    const [user] = await knex(tableName).where(filter);
-    return new User(user);
-  };
+  const [user] = await knex(tableName).where(filter);
+  return new User(user);
+};
 
+const create = async (user) => {
+  const [created] = await knex(tableName).insert(user).returning("*");
+  return new User(created);
+};
 
-  module.exports = {
-    getOne,
-  };
-  
+module.exports = {
+  getOne,
+  create,
+};

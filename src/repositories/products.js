@@ -1,6 +1,6 @@
 const knex = require("../../db");
 const Products = require("../models/Products");
-const tableName = "users";
+const tableName = "products";
 
 
 /*
@@ -13,7 +13,7 @@ const getAll = async () => {
 
 const create = async (product) => {
     const [created] = await knex(tableName).insert(product).returning("*");
-    return new User(created);
+    return new Products(created);
 };
 
 const del = (cod) => knex(tableName).where({ cod }).del();

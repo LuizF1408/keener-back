@@ -1,29 +1,28 @@
 const repository = require("../repositories/products");
-const User = require("../models/User");
+const Products = require("../models/Products");
 
 
 const getAll = () => repository.getAll();
 
 const create = async (productsData) => {
-    const user = new User({
-      ...productsData,
-     
-    });
-  
-    return repository.create(user);
-  };
+  const products = new Products({
+    ...productsData,
 
-  const del = async (cod) => {
-    const user = await repository.getById(cod);
-    if (!user.cod) {
-      throw { status: 404, message: "Not Found" };
-    }
-    return repository.del(cod);
-  };
-  
-  module.exports = {
-    create,
-    getAll,
-    del,
-  };
-  
+  });
+
+  return repository.create(products);
+};
+
+const del = async (cod) => {
+  const user = await repository.del(cod);
+  if (!user.cod) {
+    throw { status: 404, message: "Not Found" };
+  }
+  return repository.del(cod);
+};
+
+module.exports = {
+  create,
+  getAll,
+  del,
+};

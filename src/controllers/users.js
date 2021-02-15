@@ -17,4 +17,19 @@ const login = async (req, res) => {
 
 }
 
-module.exports = {login}
+const create = async (req, res) => {
+    try {
+      const { password, username} = req.body;
+      if (!password || !username) {
+        throw { status: 400, message: "Invalid Data" };
+      }
+      const created = await service.create(req.body);
+      res.status(201).json(created);
+    } catch (error) {
+      handleError(res, error);
+    }
+  };
+
+  
+
+module.exports = {login,create,}

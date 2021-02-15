@@ -27,7 +27,7 @@ const getAll = async (req, res) => {
 
   const del = async (req, res) => {
     try {
-      await service.del(req.user.id, req.params.id);
+      await service.del(req.user.cod, req.params.id);
       res.status(204).end();
     } catch (error) {
       handleError(res, error);
