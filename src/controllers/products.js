@@ -24,6 +24,7 @@ const getAll = async (req, res) => {
       handleError(res, error);
     }
   };
+  
 
   const del = async (req, res) => {
     try {
