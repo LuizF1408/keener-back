@@ -14,8 +14,8 @@ const getAll = async (req, res) => {
 
   const create = async (req, res) => {
     try {
-      const { value, name, cod, type } = req.body;
-      if (!value || !name || !type || !cod) {
+      const { value, name, cod, type, qtd } = req.body;
+      if (!value || !name || !type || !cod || !qtd) {
         throw { status: 400, message: "Invalid Data" };
       }
       const created = await service.create(req.body);
@@ -27,7 +27,7 @@ const getAll = async (req, res) => {
 
   const del = async (req, res) => {
     try {
-      await service.del(req.user.cod, req.params.id);
+      await service.del(req.params.cod);
       res.status(204).end();
     } catch (error) {
       handleError(res, error);

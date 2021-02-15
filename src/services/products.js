@@ -14,8 +14,8 @@ const create = async (productsData) => {
 };
 
 const del = async (cod) => {
-  const user = await repository.del(cod);
-  if (!user.cod) {
+  const product = await repository.del(cod);
+  if (!product.cod) {
     throw { status: 404, message: "Not Found" };
   }
   return repository.del(cod);
