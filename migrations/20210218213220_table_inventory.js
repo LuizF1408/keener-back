@@ -1,7 +1,7 @@
 const tableInventory = "inventory";
 
 exports.up = function (knex) {
-    return knex.schema.createTable(tableUsers, (table) => {
+    return knex.schema.createTable(tableInventory, (table) => {
         table.string("qtd");
         table.foreign("cod_prod").references("products.cod");
 

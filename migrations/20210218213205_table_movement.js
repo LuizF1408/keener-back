@@ -1,7 +1,7 @@
 const tableMovement = "movement";
 
 exports.up = function (knex) {
-    return knex.schema.createTable(tableUsers, (table) => {
+    return knex.schema.createTable(tableMovement, (table) => {
         table.string("up");
         table.string("down");
         table.foreign("cod_prod").references("products.cod");
