@@ -1,13 +1,13 @@
-const uuid = require("uuid")
+const uuid = require("uuid");
 const tableUsers = 'users';
 
 exports.seed = function (knex) {
-  return knex("users")
+  return knex(tableUsers)
     .del()
     .then(function () {
         const id = uuid.v4()
       
-      return knex("users").insert([
+      return knex(tableUsers).insert([
         {
           id: id,
           username: "Luiz Fernando",

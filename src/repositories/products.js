@@ -12,7 +12,7 @@ const getAll = async () => {
 };
 
 const create = async (product) => {
-    const [created] = await knex(tableName).insert(product).returning("*");
+    const [created] = await knex(tableName).insert(product);
     return new Products(created);
 };
 
