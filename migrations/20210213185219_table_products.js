@@ -4,8 +4,8 @@ exports.up = function(knex) {
        table.string("name").notNull();
        table.string("type").notNull();
        table.string("value").notNull();
-       table.string("cod").notNull().unique().primary();
-      
+       table.string("cod").notNull().unique();
+       table.string("qtd").notNull()
         
       
       });
